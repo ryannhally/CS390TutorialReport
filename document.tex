@@ -1,0 +1,62 @@
+\documentclass[10pt,twocolumn]{article}
+
+% use the oxycomps style file
+\usepackage{oxycomps}
+
+% usage: \fixme[comments describing issue]{text to be fixed}
+% define \fixme as not doing anything special
+\newcommand{\fixme}[2][]{#2}
+% overwrite it so it shows up as red
+\renewcommand{\fixme}[2][]{\textcolor{red}{#2}}
+% overwrite it again so related text shows as footnotes
+%\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
+
+% read references.bib for the bibtex data
+\bibliography{references}
+
+% include metadata in the generated pdf file
+\pdfinfo{
+    /Title (NPL Tutorial)
+    /Author (Ryann Hally)
+}
+
+% set the title and author information
+\title{Tutorial: Fine-tuning a pretrained model in English to French Translation}
+\author{Ryann Hally}
+\affiliation{Occidental College}
+\email{hally@oxy.edu}
+
+\begin{document}
+
+\maketitle
+\section{Introduction}
+For my comprehensive requirement I’m hoping to combine my interests in linguistics and computer science. This has led me to look into the field of natural language processing. While investing current NLP research topics, I read several articles on transfer learning for machine translation into low-resource languages. This refers to when there's a language we want to translate into (called the target language), but there isn't enough books, websites, social media posts, etc. in the language to train a model from scratch to translate into it. So, we use a model that's already been trained in translating into another language (the source language). Researchers typically try to pick a source language that is “linguistically similar” to the target language. However, “linguistically similar” is never defined and could mean a number of things since are many ways for languages to be related. Most selections seem to be based on assumed similarities from historical relationships. For example, using a model trained in French to translate into Spanish because they are both romance languages. For my comprehensive requirement, I'd like to experiment with source languages that relate to the target language in different ways in order to better understand what linguistic similarities are most beneficial in transfer learning and how researchers can better pick source and target language pairs.
+
+I chose Hugging Face’s natural language processing tutorial. While I read the entire tutorial, the part I completed and experimented with was the chapter on training models in translation. It aimed to teach readers how to fine-tune a pre-trained language model to translate from one language into another by walking them through fine-tuning a model in English to French translation. A successful outcome for this would then be the model producing more accurate French translations after fine-tuning than it was before.
+
+
+\section{Methods}
+
+\subsection{The Dataset}
+The dataset used in this tutorial was the KDE4 dataset on Hugging Face, which is a parallel corpus of  localized files for KDE apps in 92 languages. The source language used in this tutorial was English and the target was French. The dataset features 210,173 pairs of sentences.
+
+\subsection{The Tokenizer}
+The model
+The tokenizer used in this tutorial was a 
+
+\subsection{The model}
+Marian English to French pre-trained model from the Language Technology Research Group at the University of Helsinki. It was trained on 
+
+
+
+\section{Metrics and Results}
+
+
+
+\section{Reflection}
+I find this topic interesting and I think there’s a lot to experiment with and discover. Overall, I feel good about this being my comprehensive requirement topic. The coding aspect of this tutorial was simpler than I expected and Hugging Face and libraries like Pytorch and TensorFlow make setting up and training the model very accessible. 
+However, that's not the say the project will be straightforward. I think the difficulty will lie in understanding the different algorithms, architectures, components, and techniques well enough to make decisions about which one fits my project best. Even though all I did in this tutorial was fine-tune a pre-trained model, I found the amount of choices I could make in regards to architecture, datasets, and tokenizers overwhelming. 
+
+One concern that I have is the environmental impact of the project. Even though I will be following the tutorial suggestion's to only use pre-trained models to minimize carbon emissions from training, experimenting with different source languages means I'll have to repeatedly fine-tune the model I'm using. Hopefully this is something I can do more research on and come up with a solution for. 
+
+\end{document}
